@@ -1,10 +1,13 @@
 language: python
+python:
+  - "3.6"
 sudo: false
 before_install: echo "`date` - travis CI build"
 install:
   - echo "install"
 before_script: echo "before_script"
 script:
+  - pytest
   - echo "script"
 after_failure: echo "after_failure"
 after_success: echo "after_success"
