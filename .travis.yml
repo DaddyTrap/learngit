@@ -13,7 +13,7 @@ script:
 after_failure: echo "after_failure"
 after_success: echo "after_success"
 before_deploy:
-- openssl aes-256-cbc -k "$super_secret_password" -in deploy_rsa.enc -out deploy_rsa -d
+- openssl aes-256-cbc -k "$super_secret_password" -in deploy_rsa.enc -out /tmp/deploy_rsa -d
 deploy:
   provider: script
   skip_cleanup: true
