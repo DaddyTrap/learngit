@@ -1,13 +1,16 @@
 language: python
 python:
-  - "3.6"
+- '3.6'
 sudo: false
-before_install: echo "`date` - travis CI build"
+before_install:
+- openssl aes-256-cbc -K $encrypted_a3ef82b692c4_key -iv $encrypted_a3ef82b692c4_iv
+  -in deploy_rsa.enc -out deploy_rsa -d
+- echo "`date` - travis CI build"
 install:
-  - echo "install"
+- echo "install"
 before_script: echo "before_script"
 script:
-  - echo "script"
+- echo "script"
 after_failure: echo "after_failure"
 after_success: echo "after_success"
 before_deploy: echo "before_deploy"
