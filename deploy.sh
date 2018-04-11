@@ -1,6 +1,3 @@
-eval "$(ssh-agent -s)"
-chmod 600 /tmp/deploy_rsa
-ssh-add /tmp/deploy_rsa
 # rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR travis@daddytrapc.cn:/home/travis
 
 ssh travis@daddytrapc.cn << 'ENDSSH'
